@@ -4,3 +4,6 @@ spring:
     url: jdbc:mysql://localhost:3306/tacocloud
     username: root
     password: 246800
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
