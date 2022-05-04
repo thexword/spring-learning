@@ -1,0 +1,12 @@
+img {
+    float: left;
+    margin-left: 200px;
+    margin-bottom: 30px;
+}
+form {
+    float: right;
+    margin-right: 600px;
+}
+.validationError {
+    color: red;
+}
