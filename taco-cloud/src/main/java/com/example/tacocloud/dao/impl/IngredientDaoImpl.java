@@ -1,7 +1,7 @@
 package com.example.tacocloud.dao.impl;
 
-import com.example.tacocloud.domain.Ingredient;
 import com.example.tacocloud.dao.IngredientDao;
+import com.example.tacocloud.domain.Ingredient;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
