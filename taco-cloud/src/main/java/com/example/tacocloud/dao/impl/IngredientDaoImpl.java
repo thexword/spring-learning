@@ -18,16 +18,22 @@ public class IngredientDaoImpl implements IngredientDao {
 
     @Override
     public List<Ingredient> findAllIngredients() {
-        return sqlSessionTemplate.selectList("findAllIngredients");
+        IngredientDao mapper = sqlSessionTemplate.getMapper(IngredientDao.class);
+        return mapper.findAllIngredients();
+//        return sqlSessionTemplate.selectList("findAllIngredients");
     }
 
     @Override
     public Ingredient findIngredientById(String id) {
-        return sqlSessionTemplate.selectOne("findIngredientById", id);
+        IngredientDao mapper = sqlSessionTemplate.getMapper(IngredientDao.class);
+        return mapper.findIngredientById(id);
+//        return sqlSessionTemplate.selectOne("findIngredientById", id);
     }
 
     @Override
     public void saveIngredient(Ingredient ingredient) {
-        sqlSessionTemplate.update("saveIngredient", ingredient);
+        IngredientDao mapper = sqlSessionTemplate.getMapper(IngredientDao.class);
+        mapper.saveIngredient(ingredient);
+//        sqlSessionTemplate.update("saveIngredient", ingredient);
     }
 }

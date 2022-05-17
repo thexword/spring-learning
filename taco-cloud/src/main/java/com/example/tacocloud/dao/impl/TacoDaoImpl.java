@@ -2,19 +2,21 @@ package com.example.tacocloud.dao.impl;
 
 import com.example.tacocloud.dao.TacoDao;
 import com.example.tacocloud.domain.Taco;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class TacoDaoImpl implements TacoDao {
 
-    private TacoDao tacoDao;
+    private SqlSessionTemplate sqlSessionTemplate;
 
     @Autowired
-    public TacoDaoImpl(TacoDao tacoDao) {
-        this.tacoDao = tacoDao;
+    public TacoDaoImpl(SqlSessionTemplate sqlSessionTemplate) {
+        this.sqlSessionTemplate = sqlSessionTemplate;
     }
 
     @Override
     public void saveTaco(Taco taco, Long tacoOrderId, Long tacoIndex) {
-        tacoDao.saveTaco(taco, tacoOrderId, tacoIndex);
+        TacoDao mapper = sqlSessionTemplate.getMapper(TacoDao.class);
+        mapper.saveTaco(taco, tacoOrderId, tacoIndex);
     }
 }
